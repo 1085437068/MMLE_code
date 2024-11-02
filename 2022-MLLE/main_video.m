@@ -2,7 +2,10 @@ clc
 clear 
 close all
 addpath('Method');
-filename ='Video/3.mp4';
+filename ='/home/hzc/CodeRepository/UnderwaterEnhancement/TraditionalMethod/Non-physicalModel/MMLE_code/2022-MLLE/Video/3.mp4';
+if ~exist(filename, 'file')
+    error('文件不存在：%s', filename);
+end
 obj = VideoReader(filename);
 WriterObj=VideoWriter('Video/3Resultmp4');
 open(WriterObj);
